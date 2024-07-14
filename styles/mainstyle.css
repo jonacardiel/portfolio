@@ -71,6 +71,37 @@ img .ppic {
     height: 150px;
 }
 
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  /* Product Item Styling */
+  .product-item {
+    text-align: center; /* Centers content within the item */
+  }
+  
+  /* Product Styling with 1:1 Aspect Ratio */
+  .product-grid a img {
+    width: 80%;
+    height: 80%;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-grid a img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Product Title Styling */
+  .product-title {
+    margin: 5px 0; /* Adds some space above and below the title */
+    font-weight: bold; /* Makes the title text bolder */
+  }
+  
+
 /* Slideshow container */
 .slideshow-container {
     max-width: 1000px;
