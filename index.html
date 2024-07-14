@@ -1,38 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="styles/mainstyle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="styles/mainstyle.css">
 </head>
 <body>
-    <header>
-        <a href="index.html"> <img src="images/Black & White Minimalist Aesthetic Initials Font Logo.png" alt="Logo"> </a>
-        <nav>
-            <a href="selection.html">Selection</a>
-            <a href="aboutus.html">About Us</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Welcome!</h1>
-        <p>Hottest items!</p>
-        <a href="product1.html"> <img src="images/pexels-dellamortphotography-773252-min.jpg" alt="Product 1"></a>
-        <a href="product2.html"> <img src="images/pexels-gabby-k-6781117-min.jpg" alt="Product 2"></a>
-        <a href="product3.html"> <img src="images/pexels-karolina-grabowska-4202924-min.jpg" alt="Product 3"></a>
 
-        <img src="images/pexels-karolina-grabowska-4239014-min.jpg" alt="pic" class="ppic">
-        <p> Beauty Palace: Where Nature Meets Radiance
-            Welcome to Beuty Palace, your one-stop shop for unlocking your natural beauty from the inside out. We curate a collection of handcrafted, all-natural cosmetics and high-quality supplements designed to nourish your skin, enhance your well-being, and empower you to embrace your unique radiance.
-        </p>
-    </main>
-    <footer>
-        <p>Jonathan Cardiel</p>
-        <a href="site-plan.html">site-plan</a>
-        <p>WDD 130</p>
-        <a href="facebook.com"><img src="#" alt="facebook"></a>
-        <a href="instagram.com"><img src="#" alt="instagram"></a>
-        <a href="youtube.com"><img src="#" alt="youtube"></a>
-    </footer>
+  <header>
+    <a href="index.html">
+      <img src="images/Black & White Minimalist Aesthetic Initials Font Logo.png" alt="Logo">
+    </a>
+    <nav>
+      <a href="selection.html">Selection</a>
+      <a href="aboutus.html">About Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome!</h1>
+    <p>Hottest items!</p>
+
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <a href="product1.html">
+          <img src="images/pexels-dellamortphotography-773252-min.jpg" alt="Product 1">
+        </a>
+      </div>
+      <div class="mySlides fade">
+        <a href="product2.html">
+          <img src="images/pexels-gabby-k-6781117-min.jpg" alt="Product 2">
+        </a>
+      </div>
+      <div class="mySlides fade">
+        <a href="product3.html">
+          <img src="images/pexels-karolina-grabowska-4202924-min.jpg" alt="Product 3">
+        </a>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <img src="images/pexels-karolina-grabowska-4239014-min.jpg" alt="pic" class="ppic">
+    <p>
+      Beauty Palace: Where Nature Meets Radiance<br>
+      Welcome to Beauty Palace, your one-stop shop for unlocking your natural beauty from the inside out. We curate a collection of handcrafted, all-natural cosmetics and high-quality supplements designed to nourish your skin, enhance your well-being, and empower you to embrace your unique radiance.
+    </p>
+  </main>
+
+  <footer>
+    <p>Jonathan Cardiel</p>
+    <a href="site-plan.html">site-plan</a>
+    <p>WDD 130</p>
+    <a href="facebook.com"><img src="path/to/facebook.png" alt="facebook"></a>
+    <a href="instagram.com"><img src="path/to/instagram.png" alt="instagram"></a>
+  </footer>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
 </body>
-</html> 
+</html>
