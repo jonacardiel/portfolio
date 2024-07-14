@@ -81,10 +81,10 @@ img .ppic {
   
   /* Product Item Styling */
   .product-item {
-    text-align: center; /* Centers content within the item */
+    text-align: center; 
   }
   
-  /* Product Styling with 1:1 Aspect Ratio */
+  
   .product-grid a img {
     width: 80%;
     height: 80%;
@@ -97,8 +97,8 @@ img .ppic {
   
   /* Product Title Styling */
   .product-title {
-    margin: 5px 0; /* Adds some space above and below the title */
-    font-weight: bold; /* Makes the title text bolder */
+    margin: 5px 0; 
+    font-weight: bold; 
   }
   
 
@@ -109,7 +109,7 @@ img .ppic {
     margin: auto;
 }
 
-/* Hide the images by default */
+
 .mySlides {
     display: none;
 }
